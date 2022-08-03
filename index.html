@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijkstra Visualization</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <script src="dijkstra.js" defer></script>
+    <style>
+        *{
+            overflow: hidden;
+            margin: 0;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        body{
+            background-color: #787878;
+        }
+        #menu{
+            margin-top: 2.5vh;
+            margin-left: 2.5vh;
+            width: 25vw;        
+            height: 95vh;
+            background-color: #1f1f1f;
+            border-radius: 30px;
+            text-align: center;
+            color: white;
+        }
+        h2{
+            margin-top: 2.5vh;
+            text-decoration: underline;
+            font-size: 5vh;
+        }
+        .containerGraph{
+            width: 72.5vw;
+            height: 70vh;
+            margin-top: 9vh;
+        }
+        .containerTitle{
+            text-align: center;
+            margin: 2.5vh;
+            width: 80vw;
+            height: 95vh;
+        }
+        .containerAll{
+            display: flex;
+        }
+        h1{
+            margin-top: 7.5vh;
+            font-size: 7.5vh;
+        }
+        .circleA{
+            height: 50px;
+            width: 50px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        select{
+            margin-top: 50px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .formular, option, select, button{
+            font-size: 27px;
+        }
+        button{
+            margin-top: 70px;
+            padding: 8px;
+            border-radius: 10px;
+        }
+        button, select{
+            background-color: #787878;
+        }
+    </style>
+</head>
+<body onload="draw()">
+    <div class="containerAll">
+        <div id="menu">
+            <h2>Menu</h2>
+            <div class="formular">
+                Start Node
+                <select id="selectStart">
+                    <option selected>Please select</option>
+                    <option value="start">Start</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="finish">Finish</option>
+                </select>
+                <br>End Node
+                <select id="selectFinish">
+                    <option selected>Please select</option>
+                    <option value="start">Start</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="finish">Finish</option>
+                </select><br>
+                <button id="submitButton" type="submit">Find path</button>
+            </div>
+        </div>
+        <div class="containerTitle">
+            <h1>Dijkstra Visualization</h1>
+            <div class="containerGraph">
+                <canvas id="graph" width="1392" height="678"></canvas>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
